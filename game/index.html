@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spot the Difference — The Curio Garden</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+  <header id="hud">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">&#128269;</span>
+      <div>
+        <h1>Spot the Difference</h1>
+        <p class="subtitle">The Curio Garden &middot; a sharp-eyes puzzle</p>
+      </div>
+    </div>
+    <div class="hud-stats">
+      <div class="stat"><span class="stat-label">Level</span><span id="hud-level" class="stat-value">1 / 5</span></div>
+      <div class="stat"><span class="stat-label">Found</span><span id="hud-found" class="stat-value">0 / 7</span></div>
+      <div class="stat"><span class="stat-label">Left</span><span id="hud-left" class="stat-value">7</span></div>
+      <div class="stat"><span class="stat-label">Score</span><span id="hud-score" class="stat-value">0</span></div>
+      <div class="stat"><span class="stat-label">Time</span><span id="hud-time" class="stat-value">2:30</span></div>
+      <div class="stat"><span class="stat-label">Hints</span><span id="hud-hints" class="stat-value">3</span></div>
+    </div>
+    <div class="hud-buttons">
+      <button id="btn-hint" type="button" title="Hint (H)">&#128161; Hint</button>
+      <button id="btn-sound" type="button" title="Sound (M)">&#128266; Sound</button>
+    </div>
+  </header>
+
+  <nav id="level-bar" aria-label="Levels"></nav>
+
+  <main id="stage">
+    <section class="panel" id="panel-left">
+      <div class="panel-tag">Picture A</div>
+      <canvas id="canvas-left" width="640" height="460"></canvas>
+      <div class="crosshair" id="cross-left" hidden></div>
+    </section>
+    <section class="panel" id="panel-right">
+      <div class="panel-tag">Picture B</div>
+      <canvas id="canvas-right" width="640" height="460"></canvas>
+      <div class="crosshair" id="cross-right" hidden></div>
+    </section>
+    <div id="overlay" hidden></div>
+  </main>
+
+  <footer id="message-bar">
+    <span id="message">Find all 7 differences. Click a difference on either picture &mdash; or move the crosshair with the arrow keys and press Enter.</span>
+    <span id="combo" class="combo" hidden></span>
+  </footer>
+
+  <footer id="help-bar">
+    <span><b>Click</b> a difference &middot; <b>Arrow keys</b> move the crosshair &middot; <b>Enter</b> check &middot; <b>H</b> hint &middot; <b>R</b> restart level &middot; <b>M</b> sound</span>
+    <span id="scene-name"></span>
+  </footer>
+</div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
